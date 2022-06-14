@@ -1,3 +1,6 @@
-FROM dorowu/ubuntu-desktop-lxde-vnc:latest
+FROM devisty/xssh:v2
 EXPOSE 80
-ENTRYPOINT ["/startup.sh"]
+
+COPY . /app
+RUN chmod +x /app/start.sh
+CMD ["/app/start.sh"]
